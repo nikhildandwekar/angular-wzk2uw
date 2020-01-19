@@ -16,9 +16,9 @@ import { MessageService } from "./message.service";
     BrowserModule,
     FormsModule,
     //AppRoutingModule,
-    RouterModule.forRoot([
-      { path: '', component: HeroesComponent },
-    ])
+    // RouterModule.forRoot([
+    //   { path: '', component: HeroesComponent },
+    // ])
   ],
   declarations: [
     AppComponent,
