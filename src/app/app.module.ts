@@ -1,13 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { AppComponent } from "./app.component";
+import { HeroesComponent } from "./heroes/heroes.component";
+import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { HeroService } from "./hero.service";
+import { MessagesComponent } from "./messages/messages.component";
+import { MessageService } from "./message.service";
+//import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [
+    BrowserModule,
+    FormsModule,
+    //AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', component: HeroesComponent },
+    ])
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent
+  ],
+  bootstrap: [AppComponent],
+  providers: [HeroService, MessageService]
 })
-export class AppModule { }
+export class AppModule {}
